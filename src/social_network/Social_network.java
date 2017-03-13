@@ -23,13 +23,7 @@ public class Social_network {
         int response;
         int userType;
         //user profil
-        System.out.println("---------Enter your first name : ");
-        profil.setFirstName(scan.nextLine());
-        System.out.println("---------Enter your last name : ");
-        profil.setLastName(scan.nextLine());
-        System.out.println("---------Enter your age : ");
-        profil.setAge(scan.nextInt());
-        scan.nextLine();
+        profil.createProfil();
         System.out.println(     "---------You are a user : 0     \n"
                             +   "---------You are a moderator : 1");
         userType = scan.nextInt();
@@ -55,22 +49,15 @@ public class Social_network {
                                 switch(modif){
                                     //Update first name
                                     case 0:
-                                        System.out.println("---------Enter your new first name : ");
-                                        profil.setFirstName(scan.nextLine());
-                                        System.out.println("Your new first name is " + profil.getFirstName());
+                                        profil.modifFirstname();
                                         break;
                                     //Update last name
                                     case 1:
-                                        System.out.println("---------Enter your new last name : ");
-                                        profil.setLastName(scan.nextLine());
-                                        System.out.println("Your new last name is " + profil.getLastName());
+                                        profil.modifLastname();
                                         break;
                                     //Update date
                                     case 2:
-                                        System.out.println("---------Enter your new age : ");
-                                        profil.setAge(scan.nextInt());
-                                        scan.nextLine();
-                                        System.out.println("Your new age is " + profil.getAge() + "years old");
+                                        profil.modifAge();
                                         break;
                                     //Error message
                                     default: System.out.println("Sorry i don't understand...");
@@ -88,10 +75,7 @@ public class Social_network {
                             break;
                         //Display one message
                         case 4:
-                            profil.getIndexMessages();
-                            System.out.println("---------Enter number message");
-                            profil.getOneMessage(scan.nextInt());
-                            scan.nextLine();
+                            profil.oneMessage();
                             break;
                         //Create a new user
                         case 5:
@@ -102,7 +86,7 @@ public class Social_network {
                             System.out.println("---------Enter the age : ");
                             user.setAge(scan.nextInt());
                             scan.nextLine();
-                            user.createUser();
+                            user.storeUser();
                             break;
                         //Display all users
                         case 6:
@@ -234,7 +218,7 @@ public class Social_network {
                             System.out.println("---------Enter number user");
                             user.deleteUser(scan.nextInt());
                             scan.nextLine();
-                             }else{System.out.println("Access denied !!");}
+                            }else{System.out.println("Access denied !!");}
                             break;
                         //Goodbye message
                         case 20:

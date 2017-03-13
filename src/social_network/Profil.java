@@ -12,6 +12,8 @@ import java.util.*;
  */
 public class Profil {
     
+    Scanner scan = new Scanner(System.in);
+    
     private String firstName;
     private String lastName;
 
@@ -147,5 +149,52 @@ public class Profil {
         } else {
             System.out.println("This message does not exist ...");
         }
+    }
+/**
+ * Cette méthode permet de créer le profil utilsateur
+ * 
+ */
+    public void createProfil() {
+        System.out.println("---------Enter your first name : ");
+        setFirstName(scan.nextLine());
+        System.out.println("---------Enter your last name : ");
+        setLastName(scan.nextLine());
+        System.out.println("---------Enter your age : ");
+        setAge(scan.nextInt());
+        scan.nextLine();
+    }
+/**
+ * Cette méthode modifie le firstname
+ * 
+ */
+    public void modifFirstname() {
+        System.out.println("---------Enter your new first name : ");
+        setFirstName(scan.nextLine());
+        System.out.println("Your new first name is " + getFirstName());
+    }
+/**
+ * Cette méthode modifie le lastname
+ * 
+ */
+    public void modifLastname() {
+        System.out.println("---------Enter your new last name : ");
+        setLastName(scan.nextLine());
+        System.out.println("Your new last name is " + getLastName());
+    }
+/**
+ * Cette méthode modifie l'age
+ * 
+ */
+    public void modifAge() {
+        System.out.println("---------Enter your new age : ");
+        setAge(scan.nextInt());
+        scan.nextLine();
+        System.out.println("Your new age is " + getAge() + "years old");
+    }
+    public void oneMessage() {
+        getIndexMessages();
+        System.out.println("---------Enter number message");
+        getOneMessage(scan.nextInt());
+        scan.nextLine();
     }
 }

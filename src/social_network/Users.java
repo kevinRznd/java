@@ -80,7 +80,7 @@ public class Users {
  * Cette méthode sert à créer un user et l'ajouter à la liste
  * Cette methode ne renvoie rien
  */
-    public void createUser () {
+    public void storeUser () {
         listUsers.add(new Users(firstname, lastname, age));
     }
     
@@ -132,4 +132,5 @@ public class Users {
         }
     }
     
+    public void 
 }
