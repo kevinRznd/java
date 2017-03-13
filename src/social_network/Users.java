@@ -23,7 +23,17 @@ public class Users {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
-    }    
+    } 
+    
+    
+    public Users(){
+    
+        this.firstname = "undefined";
+        this.lastname = "undefined";
+        this.age = 0;
+        
+    
+    }
 /**
  * Cette méthode sert à récupérer la valeur de l'attribut firstname
  * @return firstname    
@@ -87,6 +97,18 @@ public class Users {
         }
         
     }
+    /**
+ * Cette méthode sert à afficher une liste de tous les index utilisateurs
+ */
+    public void getIndexUsers () {
+    
+        for(int i = 0; i < listUsers.size(); i++) {
+        
+            System.out.println("Number user : " + i);
+            
+        }
+        
+    }
 /**
  * Cette méthode sert à afficher le nom et prenom d'un utilsateur en fonction de son index
  * @param index
@@ -94,6 +116,17 @@ public class Users {
     public void getOneUser(int index){
         if(index < listUsers.size()) {
             System.out.println(listUsers.get(index).getFirstname() + " " + listUsers.get(index).getLastname());
+        } else {
+            System.out.println("This user does not exist ...");
+        }
+    }
+/**
+ * Cette méthode sert à supprimer un utilsateur
+ * @param index
+ */    
+    public void deleteUser(int index){
+        if(index < listUsers.size()) {
+            listUsers.remove(index);
         } else {
             System.out.println("This user does not exist ...");
         }

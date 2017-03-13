@@ -125,4 +125,27 @@ public class Profil {
     public void writeMessage (String content) {
         messages.add(content);
     }    
+/**
+ * Cette méthode permet de supprimer un message
+ * @param index
+ */
+    public void deleteMessage(int index) {
+        if(index < messages.size()) {
+            messages.remove(index);
+        } else {
+            System.out.println("This message does not exist ...");
+        }
+    }
+/**
+ * Cette méthode permet de modifier un message
+ * @param index
+ * @param content
+ */
+    public void updateMessage(int index, String content) {
+        if(index < messages.size()) {
+            messages.set(index, content);
+        } else {
+            System.out.println("This message does not exist ...");
+        }
+    }
 }
