@@ -132,7 +132,10 @@ public class Users {
             System.out.println("This user does not exist ...");
         }
     }
-    
+/**
+ * Cette méthode affiche le formulaire de création d'un nouvel utilisateur
+ * 
+ */
     public void createUser() {
         System.out.println("---------Enter the first name : ");
         setFirstname(scan.nextLine());
@@ -143,13 +146,20 @@ public class Users {
         scan.nextLine();
         storeUser();
     }
-    
+/**
+ * Cette méthode demande l'index de l'utilsateur à afficher  
+ * 
+ */
     public void displayOne() {
         getIndexUsers();
         System.out.println("---------Enter number user");
         getOneUser(scan.nextInt());
         scan.nextLine();
     }
+/**
+ * Cette méthode demande l'index de l'utilsateur à supprimer  
+ * 
+ */
     public void deleteOneUser() {
         getIndexUsers();
         System.out.println("---------Enter number user");

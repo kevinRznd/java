@@ -151,7 +151,7 @@ public class Profil {
         }
     }
 /**
- * Cette méthode permet de créer le profil utilsateur
+ * Cette méthode affiche le formulaire de création du profil
  * 
  */
     public void createProfil() {
@@ -164,7 +164,7 @@ public class Profil {
         scan.nextLine();
     }
 /**
- * Cette méthode modifie le firstname
+ * Cette méthode affiche le formulaire de modification du firstname
  * 
  */
     public void modifFirstname() {
@@ -173,7 +173,7 @@ public class Profil {
         System.out.println("Your new first name is " + getFirstName());
     }
 /**
- * Cette méthode modifie le lastname
+ * Cette méthode affiche le formulaire de modification du lastname
  * 
  */
     public void modifLastname() {
@@ -182,7 +182,7 @@ public class Profil {
         System.out.println("Your new last name is " + getLastName());
     }
 /**
- * Cette méthode modifie l'age
+ * Cette méthode affiche le formulaire de modification de l'age
  * 
  */
     public void modifAge() {
@@ -191,18 +191,30 @@ public class Profil {
         scan.nextLine();
         System.out.println("Your new age is " + getAge() + "years old");
     }
+/**
+ * Cette méthode demande l'index du message à afficher
+ * 
+ */
     public void oneMessage() {
         getIndexMessages();
         System.out.println("---------Enter number message");
         getOneMessage(scan.nextInt());
         scan.nextLine();
     }
+/**
+ * Cette méthode demande l'index du message à supprimer
+ * 
+ */
     public void deleteOneMessage() {
         getIndexMessages();
         System.out.println("---------Enter number message");
         deleteMessage(scan.nextInt());
         scan.nextLine();
     }
+/**
+ * Cette méthode demande l'index du message à modifier
+ * 
+ */
     public void modifMessage() {
         int n;
         String content;
