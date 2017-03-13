@@ -6,13 +6,14 @@
 
 package social_network;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * 
  * @author Kevin Ruzand
  */
-public class Users {    
+public class Users {   
+    Scanner scan = new Scanner(System.in);
     //attributs
     private String firstname;
     private String lastname;
@@ -132,5 +133,27 @@ public class Users {
         }
     }
     
-    public void 
+    public void createUser() {
+        System.out.println("---------Enter the first name : ");
+        setFirstname(scan.nextLine());
+        System.out.println("---------Enter the last name : ");
+        setLastname(scan.nextLine());
+        System.out.println("---------Enter the age : ");
+        setAge(scan.nextInt());
+        scan.nextLine();
+        storeUser();
+    }
+    
+    public void displayOne() {
+        getIndexUsers();
+        System.out.println("---------Enter number user");
+        getOneUser(scan.nextInt());
+        scan.nextLine();
+    }
+    public void deleteOneUser() {
+        getIndexUsers();
+        System.out.println("---------Enter number user");
+        deleteUser(scan.nextInt());
+        scan.nextLine();
+    }
 }

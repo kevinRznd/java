@@ -79,14 +79,7 @@ public class Social_network {
                             break;
                         //Create a new user
                         case 5:
-                            System.out.println("---------Enter the first name : ");
-                            user.setFirstname(scan.nextLine());
-                            System.out.println("---------Enter the last name : ");
-                            user.setLastname(scan.nextLine());
-                            System.out.println("---------Enter the age : ");
-                            user.setAge(scan.nextInt());
-                            scan.nextLine();
-                            user.storeUser();
+                            user.createUser();
                             break;
                         //Display all users
                         case 6:
@@ -94,15 +87,10 @@ public class Social_network {
                             break;
                         //Display one user
                         case 7:
-                            System.out.println("---------Enter number user");
-                            user.getOneUser(scan.nextInt());
-                            scan.nextLine();
+                            user.displayOne();
                             break;
                         case 8:
-                            profil.getIndexMessages();
-                            System.out.println("---------Enter number message");
-                            profil.deleteMessage(scan.nextInt());
-                            scan.nextLine();
+                            profil.deleteOneMessage();
                             break;
                         //Goodbye message
                         case 10:
@@ -136,22 +124,15 @@ public class Social_network {
                                 switch(modif){
                                     //Update first name
                                     case 0:
-                                        System.out.println("---------Enter your new first name : ");
-                                        profil.setFirstName(scan.nextLine());
-                                        System.out.println("Your new first name is " + profil.getFirstName());
+                                        profil.modifFirstname();
                                         break;
                                     //Update last name
                                     case 1:
-                                        System.out.println("---------Enter your new last name : ");
-                                        profil.setLastName(scan.nextLine());
-                                        System.out.println("Your new last name is " + profil.getLastName());
+                                        profil.modifLastname();
                                         break;
                                     //Update date
                                     case 2:
-                                        System.out.println("---------Enter your new age : ");
-                                        profil.setAge(scan.nextInt());
-                                        scan.nextLine();
-                                        System.out.println("Your new age is " + profil.getAge() + "years old");
+                                        profil.modifAge();
                                         break;
                                     //Error message
                                     default: System.out.println("Sorry i don't understand...");
@@ -169,20 +150,10 @@ public class Social_network {
                             break;
                         //Display one message
                         case 4:
-                            profil.getIndexMessages();
-                            System.out.println("---------Enter number message");
-                            profil.getOneMessage(scan.nextInt());
-                            scan.nextLine();
+                            profil.oneMessage();
                             break;
                         //Create a new user
                         case 5:
-                            System.out.println("---------Enter the first name : ");
-                            user.setFirstname(scan.nextLine());
-                            System.out.println("---------Enter the last name : ");
-                            user.setLastname(scan.nextLine());
-                            System.out.println("---------Enter the age : ");
-                            user.setAge(scan.nextInt());
-                            scan.nextLine();
                             user.createUser();
                             break;
                         //Display all users
@@ -191,33 +162,17 @@ public class Social_network {
                             break;
                         //Display one user
                         case 7:
-                            System.out.println("---------Enter number user");
-                            user.getOneUser(scan.nextInt());
-                            scan.nextLine();
+                            user.displayOne();
                             break;
                         case 8:
-                            int n;
-                            String content;
-                            profil.getIndexMessages();
-                            System.out.println("---------Enter number message");
-                            n = scan.nextInt();
-                            scan.nextLine();
-                            System.out.println("---------Enter the new message : ");
-                            content = scan.nextLine();
-                            profil.updateMessage(n, content);
+                            profil.modifMessage();
                             break;
                         case 9:
-                            profil.getIndexMessages();
-                            System.out.println("---------Enter number message");
-                            profil.deleteMessage(scan.nextInt());
-                            scan.nextLine();
+                            profil.deleteOneMessage();
                             break;
                         case 10:
                             if(modo == 2 ) {
-                            user.getIndexUsers();
-                            System.out.println("---------Enter number user");
-                            user.deleteUser(scan.nextInt());
-                            scan.nextLine();
+                            user.deleteOneUser();
                             }else{System.out.println("Access denied !!");}
                             break;
                         //Goodbye message

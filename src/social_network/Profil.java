@@ -197,4 +197,21 @@ public class Profil {
         getOneMessage(scan.nextInt());
         scan.nextLine();
     }
+    public void deleteOneMessage() {
+        getIndexMessages();
+        System.out.println("---------Enter number message");
+        deleteMessage(scan.nextInt());
+        scan.nextLine();
+    }
+    public void modifMessage() {
+        int n;
+        String content;
+        getIndexMessages();
+        System.out.println("---------Enter number message");
+        n = scan.nextInt();
+        scan.nextLine();
+        System.out.println("---------Enter the new message : ");
+        content = scan.nextLine();
+        updateMessage(n, content);
+    }
 }
