@@ -8,7 +8,7 @@ package social_network;
 import java.util.*;
 /**
  * 
- * @author Sammy Guergachi
+ * @author Kevin Ruzand
  */
 public class Profil {
     

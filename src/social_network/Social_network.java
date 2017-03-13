@@ -8,7 +8,7 @@ package social_network;
 import java.util.Scanner;
 /**
  *
- * @author Sammy Guergachi 
+ * @author Kevin Ruzand
  */
 public class Social_network {
 
