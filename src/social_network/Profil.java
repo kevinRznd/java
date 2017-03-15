@@ -16,13 +16,26 @@ public class Profil {
     
     private String firstName;
     private String lastName;
-
     private int age;
-    private ArrayList<String> messages;    
+    private ArrayList<String> messages = new ArrayList<>(); ;
+
+    public Profil(String firstName, String lastName, int age, ArrayList<String> messages) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.messages = messages;
+    }
+
+    public Profil(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    
 
     /**
      *
-     * @return
+     * @return messages
      */
     public ArrayList<String> getMessages() {
         return messages;
@@ -106,7 +119,7 @@ public class Profil {
  */   
     public void getIndexMessages () {     
         for (int i=0; i < messages.size(); i++) {
-            System.out.println("Message number "+ i);
+            System.out.println("Message number " + i);
         }
     }
 /**
@@ -149,19 +162,6 @@ public class Profil {
         } else {
             System.out.println("This message does not exist ...");
         }
-    }
-/**
- * Cette méthode affiche le formulaire de création du profil
- * 
- */
-    public void createProfil() {
-        System.out.println("---------Enter your first name : ");
-        setFirstName(scan.nextLine());
-        System.out.println("---------Enter your last name : ");
-        setLastName(scan.nextLine());
-        System.out.println("---------Enter your age : ");
-        setAge(scan.nextInt());
-        scan.nextLine();
     }
 /**
  * Cette méthode affiche le formulaire de modification du firstname
@@ -218,12 +218,13 @@ public class Profil {
     public void modifMessage() {
         int n;
         String content;
-        getIndexMessages();
+        this.getIndexMessages();
         System.out.println("---------Enter number message");
         n = scan.nextInt();
         scan.nextLine();
         System.out.println("---------Enter the new message : ");
         content = scan.nextLine();
         updateMessage(n, content);
+        
     }
 }

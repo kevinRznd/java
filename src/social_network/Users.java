@@ -126,11 +126,13 @@ public class Users {
  * @param index
  */    
     public void deleteUser(int index){
-        if(index < listUsers.size()) {
-            listUsers.remove(index);
-        } else {
-            System.out.println("This user does not exist ...");
-        }
+        
+            if(index < listUsers.size()) {
+                listUsers.remove(index);
+            } else {
+                System.out.println("This user does not exist ...");
+            }
+        
     }
 /**
  * Cette méthode affiche le formulaire de création d'un nouvel utilisateur
@@ -158,12 +160,17 @@ public class Users {
     }
 /**
  * Cette méthode demande l'index de l'utilsateur à supprimer  
- * 
+ * @param lvl
  */
-    public void deleteOneUser() {
-        getIndexUsers();
-        System.out.println("---------Enter number user");
-        deleteUser(scan.nextInt());
-        scan.nextLine();
+    public void deleteOneUser(int lvl) {
+        int rps;
+        if(lvl == 2) {
+            getIndexUsers();
+            System.out.println("---------Enter number user");
+            deleteUser(scan.nextInt());
+            scan.nextLine();
+        } else {
+            System.out.println("Access denied !");
+        }
     }
 }
