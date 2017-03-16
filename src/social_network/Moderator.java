@@ -28,6 +28,5 @@ public class Moderator extends Profil{
 
     public void setLevel(int level) {
         this.level = level;
-    }
-       
+    }    
 }

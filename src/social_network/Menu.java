@@ -7,6 +7,7 @@
 package social_network;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 /**
  * 
@@ -22,7 +23,7 @@ public class Menu {
  * @param p
  */    
     public void mainMenu(Profil p) {
-        System.out.println(           "---------Show your profil :  0           \n"
+        System.out.println(         "---------Show your profil :    0           \n"
                             +       "---------Modify your profil :  1           \n"
                             +       "---------Write a message :     2           \n"
                             +       "---------Show all messages :   3           \n"
@@ -56,9 +57,19 @@ public class Menu {
         String firstName =scan.nextLine();
         System.out.println("---------Enter your last name : ");
         String lastName =scan.nextLine();
-        System.out.println("---------Enter your age : ");
-        int age = scan.nextInt();
-        scan.nextLine();
+        int age = 0;
+        do{
+            try {
+                System.out.println("---------Enter your age : ");
+                age = scan.nextInt();               
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid age. ");
+            }
+             scan.nextLine();
+        } while (age <= 0);
+        
+        
+        
         System.out.println(     "---------You are a user :      0       \n"
                             +   "---------You are a moderator : 1       ");
         userType = scan.nextInt();
